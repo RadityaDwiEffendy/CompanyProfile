@@ -8,6 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        abu2 : '#404040',
+        abuabu : '#BFBFBF',
         customPurple: '#E6C7EB',
         background: "var(--background)",
         foreground: "var(--foreground)",
