@@ -2,14 +2,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { Poppins } from 'next/font/google'
+import { Poppins, Roboto } from 'next/font/google'
 
 const poppins = Poppins({
   weight: '400',
   subsets: ['latin'],
 })
+const roboto = Roboto({
+  weight: '500',
+  subsets: ['latin'],
+})
 
 export default function Navbar() {
+  const [s, sx] = useState(0)
+
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -28,6 +34,16 @@ export default function Navbar() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+
+  useEffect(() => {
+    const hs = () => {
+      sx(window.scrollY * .1)
+    }
+
+    window.addEventListener("scroll", hs);
+    return () => window.removeEventListener("scroll", hs)
+  }, [])
 
   useEffect(() => {
     const s = () => {
@@ -246,48 +262,125 @@ export default function Navbar() {
 
 
         <div className="flex w-[85%] h-[200vh] border border-solid border-white ">
-          <div className="flex items-center justify-center w-[100%] h-[200vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/BG.jpg" }}>
+          <div className="flex items-center justify-center w-[100%] h-[200vh] border-r border-b border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/BG.jpg" }}>
             <div className="w-[75%] ">
               <div className="w-full">
                 <p className="text-3xl text-medium">Digitalisasi & Perlindungan Operasi TI</p>
               </div>
-              
+
             </div>
           </div>
           <div className="w-full flex justify-center ">
-              <div className="w-[85%]  mt-[150px]">
-                <div className="text-abuabu">
-                  <p>Dalam lanskap teknologi yang berkembang pesat saat ini, transformasi digital sangat penting untuk keberhasilan dan keamanan operasi TI. Proses ini melibatkan penerapan teknologi dan praktik canggih untuk menyederhanakan operasi, meningkatkan produktivitas, dan melindungi aset digital.</p>
-                </div>
-                <div className="text-abuabu mt-5">
-                  <p>Strategi Utama untuk Digitalisasi Operasi TI:</p>
-                </div>
-                <div className="text-abuabu mt-5 ml-10">
-                  <ol style={{ listStyle: "decimal" }}>
-                    <li className="font-semibold">Otomatisasi : <span className="font-normal">Mengintegrasikan proses otomatis untuk mengurangi intervensi manual, sehingga meminimalkan kesalahan dan meningkatkan efisiensi.</span></li>
-                    <li className="mt-2 font-semibold">Komputasi Awan : <span className="font-normal">Memanfaatkan layanan cloud untuk menyediakan sumber daya yang dapat diskalakan, meningkatkan kolaborasi, dan mengurangi biaya infrastruktur.</span> </li>
-                    <li className="mt-2 font-semibold">Analitik Data : <span className="font-normal">Menggunakan big data dan analitik untuk membuat keputusan yang tepat, memprediksi tren, dan mengoptimalkan kinerja.</span> </li>
-                  </ol>
-                </div>
-                <div className="text-abuabu mt-5">
-                  <p>Langkah Penting untuk Melindungi Operasi TI:</p>
-                </div>
-                <div className="text-abuabu mt-5 ml-10">
-                  <ol style={{ listStyle: "decimal" }}>
-                    <li className="font-semibold">Keamanan Siber : <span className="font-normal">Menerapkan protokol keamanan yang kuat, termasuk firewall, enkripsi, dan sistem deteksi intrusi untuk melindungi dari ancaman siber.</span></li>
-                    <li className="mt-2 font-semibold">Kepatuhan : <span className="font-normal">Memastikan kepatuhan terhadap standar dan regulasi industri untuk menjaga integritas data dan menghindari sanksi hukum.</span> </li>
-                    <li className="mt-2 font-semibold">Kontrol Akses : <span className="font-normal">Memberlakukan langkah-langkah kontrol akses yang ketat untuk mencegah akses yang tidak sah ke informasi sensitif.</span> </li>
-                  </ol>
-                </div>
-                <div className="text-abuabu mt-5">
-                  <p>Dengan berfokus pada strategi dan langkah-langkah ini, organisasi dapat secara efektif mendigitalisasi operasi TI mereka sambil menjaga tingkat keamanan yang tinggi dan ketahanan terhadap ancaman potensial.</p>
-                </div>
-
-                <button className="w-[150px] h-[40px] rounded bg-customPurple text-black font-normal mt-10">Lanjut</button>
+            <div className="w-[85%]  mt-[150px]">
+              <div className="text-abuabu">
+                <p>Dalam lanskap teknologi yang berkembang pesat saat ini, transformasi digital sangat penting untuk keberhasilan dan keamanan operasi TI. Proses ini melibatkan penerapan teknologi dan praktik canggih untuk menyederhanakan operasi, meningkatkan produktivitas, dan melindungi aset digital.</p>
               </div>
+              <div className="text-abuabu mt-5">
+                <p>Strategi Utama untuk Digitalisasi Operasi TI:</p>
+              </div>
+              <div className="text-abuabu mt-5 ml-10">
+                <ol style={{ listStyle: "decimal" }}>
+                  <li className="font-semibold">Otomatisasi : <span className="font-normal">Mengintegrasikan proses otomatis untuk mengurangi intervensi manual, sehingga meminimalkan kesalahan dan meningkatkan efisiensi.</span></li>
+                  <li className="mt-2 font-semibold">Komputasi Awan : <span className="font-normal">Memanfaatkan layanan cloud untuk menyediakan sumber daya yang dapat diskalakan, meningkatkan kolaborasi, dan mengurangi biaya infrastruktur.</span> </li>
+                  <li className="mt-2 font-semibold">Analitik Data : <span className="font-normal">Menggunakan big data dan analitik untuk membuat keputusan yang tepat, memprediksi tren, dan mengoptimalkan kinerja.</span> </li>
+                </ol>
+              </div>
+              <div className="text-abuabu mt-5">
+                <p>Langkah Penting untuk Melindungi Operasi TI:</p>
+              </div>
+              <div className="text-abuabu mt-5 ml-10">
+                <ol style={{ listStyle: "decimal" }}>
+                  <li className="font-semibold">Keamanan Siber : <span className="font-normal">Menerapkan protokol keamanan yang kuat, termasuk firewall, enkripsi, dan sistem deteksi intrusi untuk melindungi dari ancaman siber.</span></li>
+                  <li className="mt-2 font-semibold">Kepatuhan : <span className="font-normal">Memastikan kepatuhan terhadap standar dan regulasi industri untuk menjaga integritas data dan menghindari sanksi hukum.</span> </li>
+                  <li className="mt-2 font-semibold">Kontrol Akses : <span className="font-normal">Memberlakukan langkah-langkah kontrol akses yang ketat untuk mencegah akses yang tidak sah ke informasi sensitif.</span> </li>
+                </ol>
+              </div>
+              <div className="text-abuabu mt-5">
+                <p>Dengan berfokus pada strategi dan langkah-langkah ini, organisasi dapat secara efektif mendigitalisasi operasi TI mereka sambil menjaga tingkat keamanan yang tinggi dan ketahanan terhadap ancaman potensial.</p>
+              </div>
+
+              <button className="w-[150px] h-[40px] rounded bg-customPurple text-black font-normal mt-10">Lanjut</button>
+            </div>
           </div>
 
         </div>
+      </div>
+
+      <div className="w-full h-[120vh] bg-bottom" style={{ backgroundImage: "url('/images/night.jpg')", backgroundPosition: `${-s}px center`, transition: "background-position .1s linear" }}>
+        <div className={roboto.className}>
+          <div className="w-full flex justify-center ">
+            <div>
+              <p style={{ lineHeight: "normal", textAlign: "center", letterSpacing: ".5px", }} className="mt-[150px] text-[30px] ">Hasil Yang Di Peroleh</p>
+            </div>
+
+          </div>
+
+          <div className="w-full mt-[150px] h-[130px] space-x-10 flex justify-center ">
+            <div className="w-[170px]   ">
+              <div className="text-customPurple flex justify-center w-full">
+                <p className="text-[50px] ">13</p>
+              </div>
+              <div className="text-abuabu flex justify-center w-full mt-[30px] ">
+                <p className="text-[14px] ">Tahun Pengalaman</p>
+              </div>
+              <div className="w-full h-[4px] bg-abuMuda rounded-[5px] mt-[10px] ">
+
+              </div>
+            </div>
+            <div className="w-[170px]   ">
+              <div className="text-customPurple flex justify-center w-full">
+                <p className="text-[50px] ">100 +</p>
+              </div>
+              <div className="text-abuabu flex justify-center w-full mt-[30px] ">
+                <p className="text-[14px] ">Pelanggan Bisnis</p>
+              </div>
+              <div className="w-full h-[4px] bg-abuMuda rounded-[5px] mt-[10px] ">
+
+              </div>
+            </div>
+            <div className="w-[170px]   ">
+              <div className="text-customPurple flex justify-center w-full">
+                <p className="text-[50px] ">500k</p>
+              </div>
+              <div className="text-abuabu flex justify-center w-full mt-[30px] ">
+                <p className="text-[14px] ">Perangkat Dikelola</p>
+              </div>
+              <div className="w-full h-[4px] bg-abuMuda rounded-[5px] mt-[10px] ">
+
+              </div>
+            </div>
+            <div className="w-[170px]   ">
+              <div className="text-customPurple flex justify-center w-full">
+                <p className="text-[50px] ">95 %</p>
+              </div>
+              <div className="text-abuabu flex justify-center w-full mt-[30px] ">
+                <p className="text-[14px] ">ROI Dalam 3-6 bulan</p>
+              </div>
+              <div className="w-full h-[4px] bg-abuMuda rounded-[5px] mt-[10px] ">
+
+              </div>
+            </div>
+            <div className="w-[170px]   ">
+              <div className="text-customPurple flex justify-center w-full">
+                <p className="text-[50px] ">97 %</p>
+              </div>
+              <div className="text-abuabu flex justify-center w-full mt-[30px] ">
+                <p className="text-[14px] ">Peringkat Memuaskan</p>
+              </div>
+              <div className="w-full h-[4px] bg-abuMuda rounded-[5px] mt-[10px] ">
+
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div className="w-full h-[100vh] bg-white bg-center" style={{ backgroundImage: " url('/images/.jpg" }}>
+
       </div>
 
     </>
