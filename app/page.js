@@ -118,7 +118,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className=" flex justify-center w-full h-[230vh] bg-black">
+      <div className=" flex justify-center w-full h-[280vh] bg-black">
 
 
         <div className="flex w-[85%] h-[220vh] border border-solid border-white ">
@@ -150,7 +150,7 @@ export default function Navbar() {
                           </div>
                         </div>
                         <div className="mt-[20px]">
-                            <p className="text-[14px] text-abuabu popin">Solusi kami dirancang untuk merampingkan Layanan TI Anda, memastikan pengoperasian yang mulus dan meningkatkan kepuasan pengguna menggunakan praktik terbaik industri dan alat canggih</p>
+                          <p className="text-[14px] text-abuabu popin">Solusi kami dirancang untuk merampingkan Layanan TI Anda, memastikan pengoperasian yang mulus dan meningkatkan kepuasan pengguna menggunakan praktik terbaik industri dan alat canggih</p>
                         </div>
 
                         <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
@@ -175,7 +175,7 @@ export default function Navbar() {
                           </div>
                         </div>
                         <div className="mt-[20px]">
-                            <p className="text-[14px] text-abuabu popin">Rangkullah kekuatan cloud dengan alat layanan pemantauan cloud yang komprehensif untuk membantu Anda memigrasikan, mengelola, dan mengoptimalkan infrastruktur pada platform cloud populer, memastikan skalabilitas, fleksibilitas, dan efektivitas biaya</p>
+                          <p className="text-[14px] text-abuabu popin">Rangkullah kekuatan cloud dengan alat layanan pemantauan cloud yang komprehensif untuk membantu Anda memigrasikan, mengelola, dan mengoptimalkan infrastruktur pada platform cloud populer, memastikan skalabilitas, fleksibilitas, dan efektivitas biaya</p>
                         </div>
 
                         <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
@@ -201,7 +201,7 @@ export default function Navbar() {
                           </div>
                         </div>
                         <div className="mt-[20px]">
-                            <p className="text-[14px] text-abuabu popin">Manajemen Aset & operasi diarahkan untuk menjaga aset dan stabilitas kinerja Infrastruktur TI Anda, mulai dari pengelolaan, pemantauan, dan optimalisasi.</p>
+                          <p className="text-[14px] text-abuabu popin">Manajemen Aset & operasi diarahkan untuk menjaga aset dan stabilitas kinerja Infrastruktur TI Anda, mulai dari pengelolaan, pemantauan, dan optimalisasi.</p>
                         </div>
 
                         <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
@@ -226,7 +226,7 @@ export default function Navbar() {
                           </div>
                         </div>
                         <div className="mt-[20px]">
-                            <p className="text-[14px] text-abuabu popin">Lindungi aset berharga Anda dari ancaman dunia maya dengan solusi keamanan dunia maya kami yang kuat. Kami menerapkan pendekatan berlapis untuk melindungi jaringan, aplikasi, dan data Anda, memastikan perlindungan maksimum terhadap potensi pelanggaran</p>
+                          <p className="text-[14px] text-abuabu popin">Lindungi aset berharga Anda dari ancaman dunia maya dengan solusi keamanan dunia maya kami yang kuat. Kami menerapkan pendekatan berlapis untuk melindungi jaringan, aplikasi, dan data Anda, memastikan perlindungan maksimum terhadap potensi pelanggaran</p>
                         </div>
 
                         <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
@@ -238,6 +238,26 @@ export default function Navbar() {
               </div>
             </div>
 
+          </div>
+
+        </div>
+      </div>
+      <div className=" flex justify-center w-full h-[230vh] bg-black">
+
+
+        <div className="flex w-[85%] h-[220vh] border border-solid border-white ">
+          <div className="flex justify-center w-[40%] h-[220vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/peakpx.jpg" }}>
+            <div className="w-[75%] ">
+              <div className="w-full mt-[150px]">
+                <p className="text-3xl text-medium">Berbagai macam ITSM & Solusi keamanan untuk merampingkan proses TI</p>
+              </div>
+              <div className="w-full mt-10 ">
+                <p className="text-[17px] tracking-[1px] leading-loose text-abuabu" style={{}}>Dengan komitmen yang kuat terhadap keunggulan, kami telah memantapkan diri sebagai mitra yang dapat diandalkan untuk organisasi yang ingin mengoptimalkan proses TI mereka, meningkatkan efisiensi operasional, dan mencapai pertumbuhan yang berkelanjutan</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            
           </div>
 
         </div>
