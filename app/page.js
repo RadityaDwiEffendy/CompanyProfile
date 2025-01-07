@@ -245,19 +245,46 @@ export default function Navbar() {
       <div className=" flex justify-center w-full h-[230vh] bg-black">
 
 
-        <div className="flex w-[85%] h-[220vh] border border-solid border-white ">
-          <div className="flex justify-center w-[40%] h-[220vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/peakpx.jpg" }}>
+        <div className="flex w-[85%] h-[200vh] border border-solid border-white ">
+          <div className="flex items-center justify-center w-[100%] h-[200vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/peakpx.jpg" }}>
             <div className="w-[75%] ">
-              <div className="w-full mt-[150px]">
-                <p className="text-3xl text-medium">Berbagai macam ITSM & Solusi keamanan untuk merampingkan proses TI</p>
+              <div className="w-full">
+                <p className="text-3xl text-medium">Digitalisasi & Perlindungan Operasi TI</p>
               </div>
-              <div className="w-full mt-10 ">
-                <p className="text-[17px] tracking-[1px] leading-loose text-abuabu" style={{}}>Dengan komitmen yang kuat terhadap keunggulan, kami telah memantapkan diri sebagai mitra yang dapat diandalkan untuk organisasi yang ingin mengoptimalkan proses TI mereka, meningkatkan efisiensi operasional, dan mencapai pertumbuhan yang berkelanjutan</p>
-              </div>
+              
             </div>
           </div>
-          <div>
-            
+          <div className="w-full flex justify-center ">
+              <div className="w-[85%]  mt-[150px]">
+                <div className="text-abuabu">
+                  <p>Dalam lanskap teknologi yang berkembang pesat saat ini, transformasi digital sangat penting untuk keberhasilan dan keamanan operasi TI. Proses ini melibatkan penerapan teknologi dan praktik canggih untuk menyederhanakan operasi, meningkatkan produktivitas, dan melindungi aset digital.</p>
+                </div>
+                <div className="text-abuabu mt-5">
+                  <p>Strategi Utama untuk Digitalisasi Operasi TI:</p>
+                </div>
+                <div className="text-abuabu mt-5 ml-10">
+                  <ol style={{ listStyle: "decimal" }}>
+                    <li className="font-semibold">Otomatisasi : <span className="font-normal">Mengintegrasikan proses otomatis untuk mengurangi intervensi manual, sehingga meminimalkan kesalahan dan meningkatkan efisiensi.</span></li>
+                    <li className="mt-2 font-semibold">Komputasi Awan : <span className="font-normal">Memanfaatkan layanan cloud untuk menyediakan sumber daya yang dapat diskalakan, meningkatkan kolaborasi, dan mengurangi biaya infrastruktur.</span> </li>
+                    <li className="mt-2 font-semibold">Analitik Data : <span className="font-normal">Menggunakan big data dan analitik untuk membuat keputusan yang tepat, memprediksi tren, dan mengoptimalkan kinerja.</span> </li>
+                  </ol>
+                </div>
+                <div className="text-abuabu mt-5">
+                  <p>Langkah Penting untuk Melindungi Operasi TI:</p>
+                </div>
+                <div className="text-abuabu mt-5 ml-10">
+                  <ol style={{ listStyle: "decimal" }}>
+                    <li className="font-semibold">Keamanan Siber : <span className="font-normal">Menerapkan protokol keamanan yang kuat, termasuk firewall, enkripsi, dan sistem deteksi intrusi untuk melindungi dari ancaman siber.</span></li>
+                    <li className="mt-2 font-semibold">Kepatuhan : <span className="font-normal">Memastikan kepatuhan terhadap standar dan regulasi industri untuk menjaga integritas data dan menghindari sanksi hukum.</span> </li>
+                    <li className="mt-2 font-semibold">Kontrol Akses : <span className="font-normal">Memberlakukan langkah-langkah kontrol akses yang ketat untuk mencegah akses yang tidak sah ke informasi sensitif.</span> </li>
+                  </ol>
+                </div>
+                <div className="text-abuabu mt-5">
+                  <p>Dengan berfokus pada strategi dan langkah-langkah ini, organisasi dapat secara efektif mendigitalisasi operasi TI mereka sambil menjaga tingkat keamanan yang tinggi dan ketahanan terhadap ancaman potensial.</p>
+                </div>
+
+                <button className="w-[150px] h-[40px] rounded bg-customPurple text-black font-normal mt-10">Lanjut</button>
+              </div>
           </div>
 
         </div>
