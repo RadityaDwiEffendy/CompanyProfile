@@ -246,7 +246,7 @@ export default function Navbar() {
 
 
         <div className="flex w-[85%] h-[200vh] border border-solid border-white ">
-          <div className="flex items-center justify-center w-[100%] h-[200vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/peakpx.jpg" }}>
+          <div className="flex items-center justify-center w-[100%] h-[200vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/BG.jpg" }}>
             <div className="w-[75%] ">
               <div className="w-full">
                 <p className="text-3xl text-medium">Digitalisasi & Perlindungan Operasi TI</p>
