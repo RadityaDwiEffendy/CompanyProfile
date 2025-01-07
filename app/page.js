@@ -2,6 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -112,11 +118,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className=" flex justify-center w-full h-[200vh] bg-black">
+      <div className=" flex justify-center w-full h-[230vh] bg-black">
 
 
-        <div className="flex w-[85%] h-[200vh] border border-solid border-white ">
-          <div className="flex justify-center w-[40%] h-[200vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/peakpx.jpg" }}>
+        <div className="flex w-[85%] h-[220vh] border border-solid border-white ">
+          <div className="flex justify-center w-[40%] h-[220vh] border-r border-solid border-whit bg-left bg-center bg-no-repeat" style={{ backgroundImage: " url('/images/peakpx.jpg" }}>
             <div className="w-[75%] ">
               <div className="w-full mt-[150px]">
                 <p className="text-3xl text-medium">Berbagai macam ITSM & Solusi keamanan untuk merampingkan proses TI</p>
@@ -129,23 +135,109 @@ export default function Navbar() {
 
 
           <div>
-            <div className="w-[240px] h-[500px] bg-abu2 rounded-2xl ml-[80px] mt-[50px] ">
-              <div className="w-full pt-[.5px]">
-                <div className="w-[50px] h-[50px] ml-[20px] mt-[15px] rounded-[50%] flex items-center justify-center bg-customPurple">
-                  <div className="w-[30px] h-[30px] bg-cover bg-center " style={{ backgroundImage: " url('/images/on-off-button.png" }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <div className="flex">
+              <div>
+                <div className="w-[240px] h-[500px] bg-abu2 rounded-2xl ml-[80px] mt-[50px] ">
+                  <div className="w-full pt-[.5px]">
+                    <div className="w-[50px] h-[50px] ml-[20px] mt-[15px] rounded-[50%] flex items-center justify-center bg-customPurple">
+                      <div className="w-[30px] h-[30px] bg-cover bg-center " style={{ backgroundImage: " url('/images/on-off-button.png" }}></div>
+                    </div>
+                    <div className="w-full flex justify-center">
+                      <div className="w-[85%] ">
+                        <div className="mt-[60px]">
+                          <div className={poppins.className}>
+                            <p className="text-[18px] font-semibold text-oren popin">Manajemen Layanan TI (ITSM)</p>
+                          </div>
+                        </div>
+                        <div className="mt-[20px]">
+                            <p className="text-[14px] text-abuabu popin">Solusi kami dirancang untuk merampingkan Layanan TI Anda, memastikan pengoperasian yang mulus dan meningkatkan kepuasan pengguna menggunakan praktik terbaik industri dan alat canggih</p>
+                        </div>
 
-          <div>
-            <div className="w-[240px] h-[500px] bg-abu2 rounded-2xl ml-[30px] mt-[120px] ">
-              <div className="w-full pt-[.5px]">
-                <div className="w-[50px] h-[50px] ml-[20px] mt-[15px] rounded-[50%] flex items-center justify-center bg-abu2">
-                  <div className="w-[40px] h-[40px] bg-cover bg-center " style={{ backgroundImage: " url('/images/Service.png" }}></div>
+                        <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="w-[240px] h-[500px] bg-abu2 rounded-2xl ml-[30px] mt-[120px] ">
+                  <div className="w-full pt-[.5px]">
+                    <div className="w-[50px] h-[50px] ml-[20px] mt-[15px] rounded-[50%] flex items-center justify-center bg-abu2">
+                      <div className="w-[40px] h-[40px] bg-cover bg-center " style={{ backgroundImage: " url('/images/Service.png" }}></div>
+                    </div>
+                    <div className="w-full flex justify-center">
+                      <div className="w-[85%] ">
+                        <div className="mt-[60px]">
+                          <div className={poppins.className}>
+                            <p className="text-[18px] font-semibold text-oren popin">Layanan Awan & Optimasi</p>
+                          </div>
+                        </div>
+                        <div className="mt-[20px]">
+                            <p className="text-[14px] text-abuabu popin">Rangkullah kekuatan cloud dengan alat layanan pemantauan cloud yang komprehensif untuk membantu Anda memigrasikan, mengelola, dan mengoptimalkan infrastruktur pada platform cloud populer, memastikan skalabilitas, fleksibilitas, dan efektivitas biaya</p>
+                        </div>
+
+                        <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="flex">
+              <div>
+                <div className="w-[240px] h-[500px] bg-abu2 rounded-2xl ml-[80px] mt-[50px] ">
+                  <div className="w-full pt-[.5px]">
+                    <div className="w-[50px] h-[50px] ml-[20px] mt-[15px]  flex items-center justify-center ">
+                      <div className="w-[40px] h-[40px] bg-cover bg-center " style={{ backgroundImage: " url('/images/ITAM.png" }}></div>
+                    </div>
+                    <div className="w-full flex justify-center">
+                      <div className="w-[85%] ">
+                        <div className="mt-[60px]">
+                          <div className={poppins.className}>
+                            <p className="text-[18px] font-semibold text-oren popin">Manajemen Aset TI (ITAM)</p>
+                          </div>
+                        </div>
+                        <div className="mt-[20px]">
+                            <p className="text-[14px] text-abuabu popin">Manajemen Aset & operasi diarahkan untuk menjaga aset dan stabilitas kinerja Infrastruktur TI Anda, mulai dari pengelolaan, pemantauan, dan optimalisasi.</p>
+                        </div>
+
+                        <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="w-[240px] h-[500px] bg-abu2 rounded-2xl ml-[30px] mt-[120px] ">
+                  <div className="w-full pt-[.5px]">
+                    <div className="w-[50px] h-[50px] ml-[20px] mt-[15px] rounded-[50%] flex items-center justify-center bg-abu2">
+                      <div className="w-[40px] h-[40px] bg-cover bg-center " style={{ backgroundImage: " url('/images/Keamanan.png" }}></div>
+                    </div>
+                    <div className="w-full flex justify-center">
+                      <div className="w-[85%] ">
+                        <div className="mt-[60px]">
+                          <div className={poppins.className}>
+                            <p className="text-[18px] font-semibold text-oren popin">Solusi Keamanan Siber</p>
+                          </div>
+                        </div>
+                        <div className="mt-[20px]">
+                            <p className="text-[14px] text-abuabu popin">Lindungi aset berharga Anda dari ancaman dunia maya dengan solusi keamanan dunia maya kami yang kuat. Kami menerapkan pendekatan berlapis untuk melindungi jaringan, aplikasi, dan data Anda, memastikan perlindungan maksimum terhadap potensi pelanggaran</p>
+                        </div>
+
+                        <div className="w-full h-[4px] rounded-[10px] mt-[20px] bg-abuMuda">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>

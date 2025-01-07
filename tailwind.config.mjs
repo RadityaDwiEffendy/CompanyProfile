@@ -8,6 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        abuMuda : "#666666",
+        oren : "#FE602F",
         abu2 : '#404040',
         abuabu : '#BFBFBF',
         customPurple: '#E6C7EB',
