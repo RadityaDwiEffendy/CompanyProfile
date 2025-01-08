@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { Poppins, Roboto } from 'next/font/google'
+import { Inspiration, Poppins, Roboto } from 'next/font/google'
 
 const poppins = Poppins({
   weight: '400',
@@ -14,12 +14,80 @@ const roboto = Roboto({
 })
 
 export default function Navbar() {
+  const [c500, sc500] = useState(0)
+  const [c100, sc100] = useState(0)
+  const [v, sv] = useState(false)
+  const r = useRef(null)
+
   const [s, sx] = useState(0)
 
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const ob = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sv(true)
+        }
+      },
+      { threshold: .5 }
+    );
+
+    if (r.current) {
+      ob.observe(r.current)
+    }
+
+    return () => {
+      if (r.current) {
+        ob.unobserve(r.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (v) {
+      if (c500 < 500) {
+        let s = c500
+        const d = 1000
+        const i = Math.ceil(500 / (d / 16))
+
+        const a = () => {
+          s += i
+          if (s > 500) s = 500;
+          sc500(s)
+
+          if (s < 500) {
+            requestAnimationFrame(a)
+          }
+        };
+
+        a();
+      }
+
+      if (c100 < 100) {
+        let s = c100
+        const d = 1000
+        const i = Math.ceil(100 / (d / 16))
+
+        const a = () => {
+          s += i
+          if (s > 100) s = 100;
+          sc100(s)
+
+          if (s < 100) {
+            requestAnimationFrame(a)
+          }
+        };
+        a();
+      }
+    }
+  }, [v])
+
+
+
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -328,8 +396,8 @@ export default function Navbar() {
               </div>
             </div>
             <div className="w-[170px]   ">
-              <div className="text-customPurple flex justify-center w-full">
-                <p className="text-[50px] ">100 +</p>
+              <div ref={r} className="text-customPurple flex justify-center w-full">
+                <p className="text-[50px] ">{Math.round(c100)}+</p>
               </div>
               <div className="text-abuabu flex justify-center w-full mt-[30px] ">
                 <p className="text-[14px] ">Pelanggan Bisnis</p>
@@ -339,8 +407,8 @@ export default function Navbar() {
               </div>
             </div>
             <div className="w-[170px]   ">
-              <div className="text-customPurple flex justify-center w-full">
-                <p className="text-[50px] ">500k</p>
+              <div ref={r} className="text-customPurple flex justify-center w-full">
+                <p className="text-[50px] ">{Math.round(c500)}k</p>
               </div>
               <div className="text-abuabu flex justify-center w-full mt-[30px] ">
                 <p className="text-[14px] ">Perangkat Dikelola</p>
@@ -371,7 +439,7 @@ export default function Navbar() {
 
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -379,7 +447,7 @@ export default function Navbar() {
 
 
 
-      <div className="w-full h-[100vh] bg-white bg-center" style={{ backgroundImage: " url('/images/.jpg" }}>
+      <div className="w-full h-[100vh] bg-abu2 bg-center" style={{ backgroundImage: " url('/images/.jpg" }}>
 
       </div>
 
