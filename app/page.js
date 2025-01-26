@@ -1,10 +1,13 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, use } from "react";
 import { Inspiration, Nunito_Sans, Padauk, Poppins, Raleway, Roboto, Wix_Madefor_Display } from 'next/font/google'
-
 import { userAgent } from "next/server";
+import { useRouter } from "next/router";
+
+
+
 
 const poppins = Poppins({
   weight: '400',
@@ -43,6 +46,17 @@ const wix4 = Wix_Madefor_Display({
 // })
 
 export default function Navbar() {
+
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
+
+  // const router = useRouter();
+
+  // const goto =  () => {
+  //   router.push('/login')
+  // }
+
 
   const cr = useRef(null)
 
@@ -268,7 +282,7 @@ export default function Navbar() {
 
           <div className="flex space-x-10 items-center ">
             <li>
-              <Link href="/" className="ml-[400px] text-white hover:text-customPurple text-sm transition duration-500">Service</Link>
+              <Link href="/" className="ml-[300px] text-white hover:text-customPurple text-sm transition duration-500">Service</Link>
             </li>
             <li>
               <Link href="/" className="text-white hover:text-customPurple text-sm transition duration-500">Visi</Link>
@@ -283,7 +297,10 @@ export default function Navbar() {
               <Link href="/" className="text-white hover:text-customPurple text-sm transition duration-500">News</Link>
             </li>
 
-
+            <div className="flex items-center">
+              <img className="w-6 h-6 bg-customPurple rounded-3xl" src="/images/profile.png" alt="Profile" />
+              <Link href="/login" className="ml-5 text-customPurple text-base hover:text-purple-300 transition duration-500">Masuk</Link>
+            </div>
 
             <div>
               <button
@@ -301,8 +318,8 @@ export default function Navbar() {
       </nav>
 
 
-      <div className={wix.className}> 
-        <div className="mt-[100px] w-full h-[210vh] bg-cover bg-center " id="zoom-bg" style={{ backgroundImage: "linear-gradient(to bottom, transparent 20%, black 110%), url('/images/peakpx.jpg')", backgroundAttachment: "fixed", transition: " background-position 0.3s ease, background-size 0.3s ease;" }}>
+      <div className={wix.className}>
+        <div className="mt-[100px] w-full h-[210vh] bg-cover bg-center " id="zoom-bg" style={{ backgroundImage: "linear-gradient(to bottom, transparent 20%, black 110%), url('/images/peakpx.jpg')", backgroundAttachment: "fixed", transition: " background-position 0.3s ease, background-size 0.3s ease" }}>
 
           <div className="absolute top-[50%] w-7/12 ml-20">
             <div>
@@ -704,8 +721,8 @@ export default function Navbar() {
             <div className="mt-[50px] ">
               <p className="text-[30px] ">Klient kami</p>
             </div>
-            <div className="w-full flex justify-center mt-[20px] mb-[20px] "> 
-                <p className="text-[35px] ">Bekerja Dengan Yang Terbaik</p>
+            <div className="w-full flex justify-center mt-[20px] mb-[20px] ">
+              <p className="text-[35px] ">Bekerja Dengan Yang Terbaik</p>
             </div>
 
             <div className="flex justify-center gap-[10px] ">
@@ -713,10 +730,10 @@ export default function Navbar() {
                 <img className="w-[200px] h-[200px] " src="/images/logo_partner/brilogo.avif"></img>
               </div>
               <div className="w-[315px] bg-abu2 h-[300px] flex items-center justify-center">
-                <img  className="w-[200px] h-[200px] " src="/images/logo_partner/krakataw.avif"></img>
+                <img className="w-[200px] h-[200px] " src="/images/logo_partner/krakataw.avif"></img>
               </div>
               <div className="w-[315px] bg-abu2 h-[300px] flex items-center justify-center">
-                <img  className="w-[200px] h-[200px] " src="/images/logo_partner/pertamino.avif"></img>
+                <img className="w-[200px] h-[200px] " src="/images/logo_partner/pertamino.avif"></img>
               </div>
 
             </div>
@@ -725,19 +742,155 @@ export default function Navbar() {
                 <img className="w-[200px] h-[200px] " src="/images/logo_partner/bankbni.avif"></img>
               </div>
               <div className="w-[315px] bg-abu2 h-[300px] flex items-center justify-center">
-                <img  className="w-[200px] h-[200px] " src="/images/logo_partner/bpjs.avif"></img>
+                <img className="w-[200px] h-[200px] " src="/images/logo_partner/bpjs.avif"></img>
               </div>
               <div className="w-[315px] bg-abu2 h-[300px] flex items-center justify-center">
-                <img  className="w-[200px] h-[200px] " src="/images/logo_partner/damanon.avif"></img>
+                <img className="w-[200px] h-[200px] " src="/images/logo_partner/damanon.avif"></img>
               </div>
 
             </div>
           </div>
         </div>
-        <div className="bg-abu2 w-full h-[100vh] ">
+        <div className="bg-abu2 w-full h-[110vh] flex justify-center items-center ">
+          <div className="w-[95%] h-[90vh] flex justify-center mt-[50px] gap-[40px] ">
+            <div className="w-[24%] h-[50vh] text-abuabu ">
+              <div>
+                <Image className="w-[150px] h-16" src="/images/Logo_Gas.png" alt="Logo Gas" width={150} height={64} />
+              </div>
+              <div className="text-[12px] " style={{ fontWeight: "bolder" }}>
+                <p>Jakarta</p>
+              </div>
+              <div className="text-[12px] mt-[5px] ">
+                <p>RDTX Square Lev 32C, Jl. Prof. DR. Satrio No.164, RT.4/RW.4, Karet Semanggi, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12930</p>
+              </div>
+              <div className="text-[12px] mt-[20px] ">
+                <p>Phone: +62 21 2509 5858</p>
+              </div>
+              <div className="text-[12px] mt-[20px] ">
+                <p>Indonesia</p>
+              </div>
+              <div className="text-[12px] mt-[20px] " style={{ fontWeight: "bolder" }}>
+                <p>Singapura</p>
+              </div>
+              <div className="text-[12px] mt-[5px] ">
+                <p>Global Asia Sinergi PTE Ltd</p>
+              </div>
+              <div className="text-[12px] mt-[5px] ">
+                <p>50 Bulan Sabit Ubi #01-08 Ubi Techpark</p>
+              </div>
+              <div className="text-[12px] mt-[5px] ">
+                <p>Telepon: +65 8136 9450</p>
+              </div>
+              <div className="text-[12px] mt-[5px] ">
+                <p>Singapura 408568</p>
+              </div>
+              <div className="text-[12px] mt-[35px] ">
+                <p>Email: info@asiasinergi.com</p>
+              </div>
 
+
+            </div>
+            <div className="w-[20%] h-[50vh] text-abuabu mt-[30px] ">
+
+              <div className="ml-[40px]">
+                <div className="text-[16px] " >
+                  <Link href={'/'} >Solusi</Link>
+                </div>
+                <div className="text-[16px] mt-[30px] " >
+                  <Link href={'/'} >Penglihatan</Link>
+                </div>
+                <div className="text-[16px] mt-[30px] ">
+                  <Link href={'/'} >Produk</Link>
+                </div>
+                <div className="text-[16px] mt-[30px] " >
+                  <Link href={'/'} >Blog</Link>
+                </div>
+                <div className="text-[16px] mt-[30px] " >
+                  <Link href={'/'} >Registrasi Mitra</Link>
+                </div>
+                <div className="text-[16px] mt-[30px] " >
+                  <Link href={'/'} >Kontak Kami</Link>
+                </div>
+
+                <button className="bg-customPurple w-[110px] h-[50px] text-black rounded rounded-[5px] mt-[80px] hover:bg-black hover:border hover:border-[1px] hover:border-white hover:text-abuabu" style={{ transition: ".5s" }}>Memulai</button>
+              </div>
+
+
+
+
+            </div>
+
+
+            <div className="w-[24%] h-[50vh] text-abuabu mt-[30px] ">
+
+              <div className="text-[18px] " >
+                <p>Berlangganan newsletter kami</p>
+              </div>
+
+              <div className="text-[14px] mt-[20px] ">
+                <label>Email *</label>
+                <input className="focus:outline-none pl-[10px]  mt-[10px] w-full h-[50px] rounded rounded-[5px] bg-black border border-[2px] border-customPurple "></input>
+              </div>
+              <div className="text-[14px] mt-[20px] ">
+                <button className="mt-[10px] w-[120px] h-[50px] rounded rounded-[5px] bg-black border border-[1px] border-abuabu hover:bg-customPurple hover:border-none hover:text-black " style={{ transition: ".5s" }}>Submit</button>
+              </div>
+
+
+
+            </div>
+            <div className="w-[13%] h-[50vh] text-abuabu mt-[30px]  ml-[30px] ">
+
+              <div className="text-[18px] " >
+                <p>Ikuti kami di:</p>
+              </div>
+
+              <div className="text-[14px] mt-[20px] flex gap-[5px]">
+                <img className="w-[25px] h-[25px] bg-abu2 rounded-3xl" src="/images/in.jpg" alt="linkedin" />
+                <img className="w-[25px] h-[25px] bg-customPurple rounded-3xl" src="/images/fbook.jpg" alt="Profile" />
+                <img className="w-[25px] h-[25px] bg-customPurple rounded-3xl" src="/images/x.jpg" alt="Profile" />
+                <img className="w-[25px] h-[25px] bg-customPurple rounded-3xl" src="/images/ins.jpg" alt="Profile" />
+                <img className="w-[25px] h-[25px] bg-customPurple rounded-3xl" src="/images/yt.jpg" alt="Profile" />
+              </div>
+
+
+
+              <div className="mt-[80px] ">
+                <div className="text-[14px] mt-[30px] " >
+                  <Link href={'/'} >Syarat & Ketentuan</Link>
+                </div>
+                <div className="text-[14px] mt-[30px] " >
+                  <Link href={'/'} >Privasi & Cookie</Link>
+                </div>
+                <div className="text-[14px] mt-[30px] " >
+                  <Link href={'/'} >Anti Gratifikasi</Link>
+                </div>
+                <div className="text-[14px] mt-[30px] " >
+                  <Link href={'/'} >Kode Etik</Link>
+                </div>
+                <div className="text-[14px] mt-[30px] " >
+                  <Link href={'/'} >Mendukung</Link>
+                </div>
+                <div className="text-[14px] mt-[30px] " >
+                  <Link href={'/'} >Internal</Link>
+                </div>
+                <div className="text-[14px] mt-[30px] " >
+                  <Link href={'/'} >Status pelayanan</Link>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+          </div>
         </div>
       </div>
+
+
     </>
   );
 }

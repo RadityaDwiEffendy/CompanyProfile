@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model news {
+  id        Int      @id @default(autoincrement())
+  tanggal   String
+  title     String
+  deskripsi String
+  gambar    String
+  paragraf2 String // Nullable
+  paragraf1 String // Nullable
+  paragraf3 String // Nullable
+  paragraf4 String // Nullable
+  paragraf5 String // Nullable
+  paragraf6 String // Nullable
+  paragraf7 String // Nullable
+  paragraf8 String // Nullable
+  paragraf9 String // Nullable
+  paragraf10 String // Nullable
+  point1 String // Nullable
+  point2 String // Nullable
+  point3 String // Nullable
+  point4 String // Nullable
+  point5 String // Nullable
+  createdAt DateTime @default(now())
+}
