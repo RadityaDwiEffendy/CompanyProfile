@@ -11,9 +11,13 @@ const wix4 = Wix_Madefor_Display({
     subsets: ['latin'],
 })
 
+import dynamic from 'next/dynamic';
+
+
+
 
 export default function NewsPage() {
-
+   
     const [formData, setFormData] = useState({
         tanggal: '',
         title: '',
@@ -56,28 +60,30 @@ export default function NewsPage() {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
-
+        console.log('Submitting data:', formData); 
         try {
-            const response = await fetch('/api', {
+            const response = await fetch('/api/posts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
-            })
-
-            const data = await response.json()
-
-            if(data.success){
-                alert('Data Berhasil DI Tambahkan')
-            }else{
-                alert('Terjadi Kesalahan' + data.message)
+            });
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
             }
-        }catch (error) {
-            console.error('Error', error)
-            alert('Terjadi Kesalahan')
+    
+            const data = await response.json();
+            alert('Data berhasil ditambahkan');
+        } catch (error) {
+            console.error('Error:', error);
+            alert(`Terjadi kesalahan: ${error.message}`);
         }
-      }
+    };
+    
+    
 
     //   useEffect(() => {
     //     if (typeof window !== 'undefined') {

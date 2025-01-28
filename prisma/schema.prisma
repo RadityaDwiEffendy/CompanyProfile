@@ -18,21 +18,21 @@ model news {
   tanggal   String
   title     String
   deskripsi String
-  gambar    String
-  paragraf2 String // Nullable
-  paragraf1 String // Nullable
-  paragraf3 String // Nullable
-  paragraf4 String // Nullable
-  paragraf5 String // Nullable
-  paragraf6 String // Nullable
-  paragraf7 String // Nullable
-  paragraf8 String // Nullable
-  paragraf9 String // Nullable
-  paragraf10 String // Nullable
-  point1 String // Nullable
-  point2 String // Nullable
-  point3 String // Nullable
-  point4 String // Nullable
-  point5 String // Nullable
+  gambar    Bytes   
+  paragraf1 String? 
+  paragraf2 String? 
+  paragraf3 String? 
+  paragraf4 String? 
+  paragraf5 String? 
+  paragraf6 String? 
+  paragraf7 String? 
+  paragraf8 String? 
+  paragraf9 String? 
+  paragraf10 String? 
+  point1    String? 
+  point2    String? 
+  point3    String? 
+  point4    String? 
+  point5    String? 
   createdAt DateTime @default(now())
 }
