@@ -5,13 +5,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm install prisma @prisma/client
+
+add .env
+DATABASE_URL="mysql://user:password@localhost:3306/db-name"
+
+migrate database
+npx prisma migrate dev
+
+to see database
+npx prisma studio
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
