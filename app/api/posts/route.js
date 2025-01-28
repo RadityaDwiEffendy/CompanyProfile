@@ -1,4 +1,3 @@
-
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -25,16 +24,16 @@ export async function POST(req) {
       point3,
       point4,
       point5,
-    } = await req.json(); 
+    } = await req.json();
 
-    console.log("Received data:", req.body);  
+    console.log("Received data:", req.body);
 
     const newPost = await prisma.news.create({
       data: {
         tanggal,
         title,
         deskripsi,
-        gambar,
+        gambar: Buffer.from(gambar.split(',')[1], 'base64'), 
         paragraf1: paragraf1 || null,
         paragraf2: paragraf2 || null,
         paragraf3: paragraf3 || null,
@@ -53,13 +52,13 @@ export async function POST(req) {
       },
     });
 
-    console.log("Created new post:", newPost);  
+    console.log("Created new post:", newPost);
 
     return new Response(JSON.stringify({ success: true, data: newPost }), {
       status: 201,
     });
   } catch (error) {
-    console.error("Error:", error);  
+    console.error("Error:", error);
     return new Response(
       JSON.stringify({ success: false, message: error.message }),
       { status: 500 }
